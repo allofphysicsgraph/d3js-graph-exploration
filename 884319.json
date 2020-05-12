@@ -1,0 +1,23 @@
+{
+  "nodes": [
+    {"id": "4718871", "group": 2, "img": "/static/multiplybothsidesby.png", "width": 298, "height": 30, "linear index": 2},
+    {"id": "2131616531", "group": 0, "img": "/static/2131616531.png", "width": 103, "height": 30, "linear index": 0},
+    {"id": "9565166889", "group": 0, "img": "/static/9565166889.png", "width": 24, "height": 23, "linear index": 0},
+    {"id": "9040079362", "group": 0, "img": "/static/9040079362.png", "width": 18, "height": 30, "linear index": 0},
+    {"id": "9278347", "group": 1, "img": "/static/declareinitialexpr.png", "width": 270, "height": 30, "linear index": 1},
+    {"id": "6286448", "group": 4, "img": "/static/declarefinalexpr.png", "width": 255, "height": 30, "linear index": 4},
+    {"id": "2113211456", "group": 0, "img": "/static/2113211456.png", "width": 121, "height": 34, "linear index": 0},
+    {"id": "2169431", "group": 3, "img": "/static/dividebothsidesby.png", "width": 260, "height": 30, "linear index": 3},
+    {"id": "3131111133", "group": 0, "img": "/static/3131111133.png", "width": 121, "height": 34, "linear index": 0}
+  ],
+  "links": [
+    {"source": "2169431", "target": "2113211456", "value": 1},
+    {"source": "2113211456", "target": "6286448", "value": 1},
+    {"source": "9278347", "target": "3131111133", "value": 1},
+    {"source": "4718871", "target": "2131616531", "value": 1},
+    {"source": "9040079362", "target": "4718871", "value": 1},
+    {"source": "2131616531", "target": "2169431", "value": 1},
+    {"source": "3131111133", "target": "4718871", "value": 1},
+    {"source": "9565166889", "target": "2169431", "value": 1}
+  ]
+}
