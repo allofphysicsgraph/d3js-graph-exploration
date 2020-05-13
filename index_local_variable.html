@@ -92,13 +92,13 @@ var svg = d3.select("#viz").attr("width", width).attr("height", height);
 // define arrow markers for graph links
 svg.append("svg:defs").append("svg:marker")
     .attr("id", "end-arrow")
-    .attr("viewBox", "0 -5 10 10")
-    .attr("refX", 6)
-    .attr("markerWidth", 3)
-    .attr("markerHeight", 3)
+    .attr("viewBox", "0 -5 5 10") // min-x, min-y, width, height; https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/viewBox
+    .attr("refX", 8) // x coordinate of an element's reference point; https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/refX
+    .attr("markerWidth", 20) // width of the viewport; https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/markerWidth
+    .attr("markerHeight", 20)
     .attr("orient", "auto")
-    .append("svg:line")
-    .attr("d", "M0,-5L10,0L0,5")
+    .append("svg:path")
+    .attr("d", "M0,-3L6,0L0,3") // draw line starting at 0,-5; connect to 8,0, connect to 0,5
     .attr("fill", "black");
 
 // http://bl.ocks.org/AndrewStaroscik/5222370
@@ -125,7 +125,7 @@ var link = container.append("g").attr("class", "links")
     .enter()
     .append("line")
     .attr("stroke", "#aaa")
-    .attr("stroke-width", "1px")
+    .attr("stroke-width", "2px")
     .attr("marker-end","url(#end-arrow)");
 
 var node = container.append("g").attr("class", "nodes")
@@ -133,7 +133,7 @@ var node = container.append("g").attr("class", "nodes")
     .data(graph.nodes)
     .enter()
     .append("circle")
-    .attr("r", 5)
+    .attr("r", 10)
     .attr("fill", function(d) { return color(d.group); })
 
 node.on("mouseover", focus).on("mouseout", unfocus);
