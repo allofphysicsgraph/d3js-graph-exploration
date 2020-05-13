@@ -1,13 +1,19 @@
 <html>
   <head>
 
+    <style>
+
+      /* Make the chart container fill the page using CSS. */
+      #viz {
+        position: fixed;
+        width: 600;
+        height: 400;
+      }
+    </style>
   </head>
   <body>
 
- <center>
-<svg id="viz"></svg>
- </center>
-</P>
+<div id="viz"></div>
 
 <script src="d3.min.js"></script>
 <!--
@@ -18,9 +24,22 @@
      and is better than https://bl.ocks.org/mbostock/950642
      because mapio"s implementation features zoom and node coloring -->
 <script>
-var width = window.innerWidth*0.9;
-var height = window.innerHeight*0.8;
-var border = 1;
+
+     // https://bl.ocks.org/curran/3a68b0c81991e2e94b19
+      var chartDiv = document.getElementById("viz");
+      var svg = d3.select(chartDiv).append("svg");
+
+        //var width = chartDiv.clientWidth;
+        //var height = chartDiv.clientHeight;
+ 
+     var width = window.innerWidth;
+     var height = window.innerHeight;
+
+console.log(width);
+console.log(height);
+//var width = 600;
+//var height = 400;
+var border = 3;
 var bordercolor="black";
 var color = d3.scaleOrdinal(d3.schemeCategory10); // coloring of nodes
 
@@ -86,7 +105,7 @@ function neigh(a, b) {
 }
 
 
-var svg = d3.select("#viz").attr("width", width).attr("height", height);
+//var svg = d3.select(chartDiv).attr("width", width).attr("height", height);
 
 // http://bl.ocks.org/rkirsling/5001347
 // define arrow markers for graph links
@@ -99,7 +118,7 @@ svg.append("svg:defs").append("svg:marker")
     .attr("orient", "auto")
     .append("svg:path")
     .attr("d", "M0,-3L6,0L0,3") // draw line starting at 0,-5; connect to 8,0, connect to 0,5
-    .attr("fill", "black");
+    .attr("fill", "gray");
 
 // http://bl.ocks.org/AndrewStaroscik/5222370
            	var borderPath = svg.append("rect")
