@@ -3,7 +3,7 @@
 as per
 https://stackoverflow.com/a/58865973/1164295
 
-open -na Google\ Chrome --args --disable-web-security --user-data-dir=`pwd`/tmp
+open -na Google\ Chrome --args --disable-web-security --user-data-dir=$HOME/tmp
 
 == step 2: serve files from a local server ==
 as per
